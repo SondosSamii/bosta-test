@@ -1,0 +1,109 @@
+#shipment-details h2 {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+#shipment-details h3 {
+  color: var(--bold-text-color);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+#shipment-details h4 {
+  color: var(--bold-text-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+.shipment-progress-card {
+  border: var(--primary-border);
+  border-radius: var(--card-border-radius);
+}
+
+.shipment-progress-card h4:first-of-type,
+.shipment-progress-card h4:last-of-type {
+  padding: 10px;
+}
+
+.status-row .col,
+.icons .col {
+  padding: 0;
+}
+
+.status-row .col:last-of-type,
+.status-row .col:nth-of-type(2n + 1),
+.icons .col:last-of-type,
+.icons .col:nth-of-type(2n + 1) {
+  text-align: end;
+}
+
+.status-row .col:first-of-type,
+.icons .col:first-of-type {
+  text-align: start;
+}
+
+.icon {
+  position: absolute;
+  top: -15px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--border-color);
+  border: var(--primary-border);
+  overflow: hidden;
+}
+
+.check-icon {
+  font-size: 1.25rem;
+  padding: 3px 2px 3px 3px;
+  vertical-align: baseline;
+}
+
+.check-icon.first {
+  right: 10px;
+}
+
+.check-icon.second {
+  right: 33.3%;
+}
+
+.shipping-icon,
+.delivered-icon {
+  top: -28px;
+  font-size: 3rem;
+  padding: 0.5rem;
+}
+
+.shipping-icon {
+  right: calc(66.6% - 24px);
+  transform: rotateY(180deg);
+}
+
+.delivered-icon {
+  left: 10px;
+}
+
+.table thead,
+.address {
+  color: var(--text-color);
+  background-color: var(--border-color);
+  border-radius: var(--card-border-radius);
+}
+
+.address,
+.support {
+  padding: 0.75rem 1rem;
+}
+
+.support {
+  border: var(--primary-border);
+  border-radius: var(--card-border-radius);
+}
+
+.support h5 {
+  color: var(--bold-text-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
