@@ -1,0 +1,35 @@
+.burger-menu-btn {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.navbar-nav .nav-link {
+  color: var(--bold-text-color);
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link.lang {
+  color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    direction: rtl;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .vr {
+    border-right: var(--primary-border);
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    direction: ltr;
+  }
+}
