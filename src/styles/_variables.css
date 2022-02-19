@@ -1,4 +1,12 @@
 :root {
   --primary-color: #ff0000;
+  --green: #1ac45e;
+  --yellow: #ff971a;
+  --text-color: #777;
+  --bold-text-color: #000;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --primary-border: 1px solid var(--border-color);
+  --card-border-radius: 0.25rem;
+  --shadow: 0 0 20px 1px #ddd;
   --font: "Cairo", sans-serif;
 }
