@@ -1,0 +1,29 @@
+.track-shipment {
+  box-shadow: var(--shadow);
+  border-radius: var(--card-border-radius);
+}
+
+.track-shipment h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.track-shipment label {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btn.search-btn {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  font-size: 1.35rem;
+  padding: 0;
+}
+
+.btn.search-btn:hover {
+  color: #fff;
+}
