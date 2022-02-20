@@ -1,13 +1,12 @@
 import { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
-import { AiOutlineCheck, AiOutlineFileDone } from "react-icons/ai";
-import { FaShippingFast } from "react-icons/fa";
 
 import * as ShipmentAPI from "../../ShipmentAPI";
 import ShipmentTable from "./shipment-table";
 import { localizeState, FullDate, LongDate, Time } from "./_functions";
 
 import "./shipment.css";
+import ShipmentIcons from "./shipment-icons";
 
 class ShipmentDetails extends Component {
   state = {
@@ -153,104 +152,10 @@ class ShipmentDetails extends Component {
 
               <div className="col-12">
                 <div className="row justify-content-center icons">
-                  {currentStatus === "TICKET_CREATED" ? (
-                    <>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon first"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineCheck className="icon check-icon second" />
-                      </div>
-                      <div className="col">
-                        <FaShippingFast className="icon shipping-icon" />
-                      </div>
-                      <div className="col">
-                        <AiOutlineFileDone className="icon delivered-icon" />
-                      </div>
-                    </>
-                  ) : currentStatus === "PACKAGE_RECEIVED" ? (
-                    <>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon first"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon second"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <FaShippingFast className="icon shipping-icon" />
-                      </div>
-                      <div className="col">
-                        <AiOutlineFileDone className="icon delivered-icon" />
-                      </div>
-                    </>
-                  ) : currentStatus === "NOT_YET_SHIPPED" ||
-                    currentStatus === "DELIVERED_TO_SENDER" ||
-                    currentStatus === "IN_TRANSIT" ||
-                    currentStatus === "OUT_FOR_DELIVERY" ||
-                    currentStatus === "WAITING_FOR_CUSTOMER_ACTION" ||
-                    currentStatus === "RECEIVED_DELIVERY_LOCATION" ? (
-                    <>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon first"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon second"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <FaShippingFast
-                          className="icon shipping-icon"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineFileDone className="icon delivered-icon" />
-                      </div>
-                    </>
-                  ) : currentStatus === "DELIVERED" ? (
-                    <>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon first"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineCheck
-                          className="icon check-icon second"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <FaShippingFast
-                          className="icon shipping-icon"
-                          style={colorStyle}
-                        />
-                      </div>
-                      <div className="col">
-                        <AiOutlineFileDone
-                          className="icon delivered-icon"
-                          style={colorStyle}
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <></>
-                  )}
+                  <ShipmentIcons
+                    currentStatus={currentStatus}
+                    colorStyle={colorStyle}
+                  />
                 </div>
 
                 <div className="row justify-content-center status-row pt-4">
