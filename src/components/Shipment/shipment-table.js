@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { localizeState, ShortDate, Time } from "./_functions";
 
 class ShipmentTable extends Component {

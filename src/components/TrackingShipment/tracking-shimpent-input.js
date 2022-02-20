@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 

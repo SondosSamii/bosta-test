@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
 import { AiOutlineCheck, AiOutlineFileDone } from "react-icons/ai";
 import { FaShippingFast } from "react-icons/fa";
