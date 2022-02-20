@@ -1,4 +1,4 @@
-import TrackingShipmentInput from "./tracking-shimpent-input";
+import TrackingShipmentInput from "./tracking-shipment-input";
 
 import "./tracking-shipment.css";
 
