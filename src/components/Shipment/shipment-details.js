@@ -22,9 +22,8 @@ class ShipmentDetails extends Component {
       bgColor: "",
       borderColor: "",
     },
+    noteColor: "",
   };
-
-  noteColor = "";
 
   async componentDidMount() {
     const shipmentNum = window.location.pathname.replace("/shipment/", "");
@@ -44,46 +43,38 @@ class ShipmentDetails extends Component {
     });
   }
 
-  changeColors(color, bgColor, borderColor) {
+  changeValues(color, secondColor, percent) {
     this.setState({
       colorStyle: {
         color: color,
-        backgroundColor: bgColor,
-        borderColor: borderColor,
+        backgroundColor: secondColor,
+        borderColor: secondColor,
       },
+      progressPercent: percent,
+      noteColor: secondColor,
     });
   }
 
   changeProgress(status) {
     switch (status) {
       case "TICKET_CREATED":
-        this.noteColor = "var(--yellow)";
-        this.changeColors("#fff", this.noteColor, this.noteColor);
-        this.setState({ progressPercent: 0 });
+        this.changeValues("#fff", "var(--yellow)", 0);
         break;
       case "PACKAGE_RECEIVED":
-        this.noteColor = "var(--yellow)";
-        this.changeColors("#fff", this.noteColor, this.noteColor);
-        this.setState({ progressPercent: 33.3 });
+        this.changeValues("#fff", "var(--yellow)", 33.3);
         break;
       case "IN_TRANSIT":
       case "OUT_FOR_DELIVERY":
       case "WAITING_FOR_CUSTOMER_ACTION":
       case "RECEIVED_DELIVERY_LOCATION":
-        this.noteColor = "var(--yellow)";
-        this.changeColors("#fff", this.noteColor, this.noteColor);
-        this.setState({ progressPercent: 66.6 });
+        this.changeValues("#fff", "var(--yellow)", 66.6);
         break;
       case "NOT_YET_SHIPPED":
       case "DELIVERED_TO_SENDER":
-        this.noteColor = "var(--primary-color)";
-        this.changeColors("#fff", this.noteColor, this.noteColor);
-        this.setState({ progressPercent: 66.6 });
+        this.changeValues("#fff", "var(--primary-color)", 66.6);
         break;
       case "DELIVERED":
-        this.noteColor = "var(--green)";
-        this.changeColors("#fff", this.noteColor, this.noteColor);
-        this.setState({ progressPercent: 100 });
+        this.changeValues("#fff", "var(--green)", 100);
         break;
       default:
         break;
@@ -99,6 +90,7 @@ class ShipmentDetails extends Component {
       promisedDate,
       progressPercent,
       colorStyle,
+      noteColor,
     } = this.state;
 
     localizeState(currentStatus);
@@ -110,7 +102,7 @@ class ShipmentDetails extends Component {
             <div className="row justify-content-between px-4">
               <div className="col-auto">
                 <h2>رقم الشحنة {shipmentDetails.TrackingNumber}</h2>
-                <h3 className="note" style={{ color: this.noteColor }}>
+                <h3 className="note" style={{ color: noteColor }}>
                   {localizeState(currentStatus)}
                 </h3>
               </div>
@@ -151,7 +143,7 @@ class ShipmentDetails extends Component {
                     aria-valuemax="100"
                     style={{
                       width: `${progressPercent}%`,
-                      backgroundColor: this.noteColor,
+                      backgroundColor: noteColor,
                     }}
                   >
                     <span className="sr-only">{progressPercent}% Complete</span>
@@ -276,7 +268,7 @@ class ShipmentDetails extends Component {
                         <span
                           style={{
                             fontSize: "1rem",
-                            color: this.noteColor,
+                            color: noteColor,
                             display: "block",
                             padding: "0 10px",
                           }}
@@ -301,7 +293,7 @@ class ShipmentDetails extends Component {
               <h4 className="pb-3">تفاصيل الشحنة</h4>
               <ShipmentTable
                 transitEvents={shipmentDetails.TransitEvents}
-                noteColor={this.noteColor}
+                noteColor={noteColor}
               />
             </div>
             <div className="col-12 col-lg-4">
