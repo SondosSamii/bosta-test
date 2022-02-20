@@ -3,17 +3,17 @@ import { AiOutlineCheck, AiOutlineFileDone } from "react-icons/ai";
 import { FaShippingFast } from "react-icons/fa";
 
 class ShipmentIcons extends Component {
-  SwitchCases() {
+  handleStyle() {
     const style = this.props.colorStyle;
     switch (this.props.currentStatus) {
       case "TICKET_CREATED":
         return this.renderIcons(style, null, null, null);
       case "PACKAGE_RECEIVED":
+        return this.renderIcons(style, style, null, null);
       case "IN_TRANSIT":
       case "OUT_FOR_DELIVERY":
       case "WAITING_FOR_CUSTOMER_ACTION":
       case "RECEIVED_DELIVERY_LOCATION":
-        return this.renderIcons(style, style, null, null);
       case "NOT_YET_SHIPPED":
       case "DELIVERED_TO_SENDER":
         return this.renderIcons(style, style, style, null);
@@ -47,7 +47,7 @@ class ShipmentIcons extends Component {
   }
 
   render() {
-    return <>{this.SwitchCases()}</>;
+    return <>{this.handleStyle()}</>;
   }
 }
 
