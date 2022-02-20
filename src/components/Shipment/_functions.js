@@ -1,4 +1,4 @@
-function localizeState(status) {
+export function localizeState(status) {
   switch (status) {
     case "TICKET_CREATED":
       return "تم إنشاء الشحنة";
@@ -23,7 +23,7 @@ function localizeState(status) {
   }
 }
 
-function FullDate(timestamp) {
+export function FullDate(timestamp) {
   return new Date(timestamp).toLocaleDateString("ar-EG", {
     weekday: "long",
     year: "numeric",
@@ -32,7 +32,7 @@ function FullDate(timestamp) {
   });
 }
 
-function LongDate(timestamp) {
+export function LongDate(timestamp) {
   return new Date(timestamp).toLocaleDateString("ar-EG", {
     year: "numeric",
     month: "long",
@@ -40,7 +40,7 @@ function LongDate(timestamp) {
   });
 }
 
-function ShortDate(timestamp) {
+export function ShortDate(timestamp) {
   return new Date(timestamp).toLocaleDateString("ar-EG", {
     year: "numeric",
     month: "numeric",
@@ -48,11 +48,9 @@ function ShortDate(timestamp) {
   });
 }
 
-function Time(timestamp) {
+export function Time(timestamp) {
   return new Date(timestamp).toLocaleTimeString("ar-EG", {
     hour: "numeric",
     minute: "numeric",
   });
 }
-
-export { localizeState, FullDate, LongDate, ShortDate, Time };
